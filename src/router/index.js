@@ -18,7 +18,7 @@ const createRouter = () => new Router({
         redirect:"/hello/hello1",
         children: [{
             path: "hello1",
-            component: () => import("@/components/Index")
+            component: () => import("@/components/HelloWorld")
         }]
     }]
 })
