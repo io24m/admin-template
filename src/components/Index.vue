@@ -1,12 +1,12 @@
 <template>
   <div>
-    <div>qwe</div> 
+    <div>index</div> 
   </div>
 </template>
 
 <script>
 export default {
-  name: "HelloWorld",
+  name: "Index",
   props: {
     msg: String,
   },
