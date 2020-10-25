@@ -10,16 +10,25 @@
   >
     <a-layout-header
       :style="{
-        height: '48px',
         fontColor: '#C1C6C8',
         backgroundColor: 'rgb(38, 47, 62)',
         color: '#C1C6C8',
+        padding: '0 10px',
       }"
-      >hhhhh
+    >
+      <img v-if="logo" :src="logo" style="width: 40px" />
     </a-layout-header>
     <a-layout>
-      <a-layout-sider theme="light">left sidebar</a-layout-sider>
-      <a-layout-content
+      <!-- <a-layout-sider
+        theme="light"
+        v-model="collapsed"
+        :trigger="null"
+        collapsible
+        :style="{ overflow: 'auto' }"
+      > -->
+        <Menu />
+      <!-- </a-layout-sider> -->
+      <!-- <a-layout-content
         :style="{
           margin: '4px',
           padding: '12px',
@@ -28,7 +37,8 @@
         }"
         >main content
         <router-view />
-      </a-layout-content>
+      </a-layout-content> -->
+      <AppContent/>
     </a-layout>
     <a-layout-footer
       :style="{
@@ -42,7 +52,17 @@
   </a-layout>
 </template>
 <script>
+import Menu from "./Menu";
+import AppContent from "./AppContent";
 export default {
   name: "Layout",
+  components: { Menu,AppContent },
+  data() {
+    return {
+      title: "1Vue Admin Template",
+      logo: "https://cn.vuejs.org/images/logo.png",
+      // "https://wpimg.wallstcn.com/69a1c46c-eb1c-4b46-8bd4-e9e686ef5251.png",
+    };
+  },
 };
 </script>
