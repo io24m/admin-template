@@ -8,37 +8,10 @@
       height: '100vh',
     }"
   >
-    <a-layout-header
-      :style="{
-        fontColor: '#C1C6C8',
-        backgroundColor: 'rgb(38, 47, 62)',
-        color: '#C1C6C8',
-        padding: '0 10px',
-      }"
-    >
-      <img v-if="logo" :src="logo" style="width: 40px" />
-    </a-layout-header>
+    <Header/>
     <a-layout>
-      <!-- <a-layout-sider
-        theme="light"
-        v-model="collapsed"
-        :trigger="null"
-        collapsible
-        :style="{ overflow: 'auto' }"
-      > -->
-        <Menu />
-      <!-- </a-layout-sider> -->
-      <!-- <a-layout-content
-        :style="{
-          margin: '4px',
-          padding: '12px',
-          background: '#fff',
-          overflow: 'auto',
-        }"
-        >main content
-        <router-view />
-      </a-layout-content> -->
-      <AppContent/>
+      <Menu />
+      <AppContent />
     </a-layout>
     <a-layout-footer
       :style="{
@@ -54,9 +27,10 @@
 <script>
 import Menu from "./Menu";
 import AppContent from "./AppContent";
+import Header from "./Header";
 export default {
   name: "Layout",
-  components: { Menu,AppContent },
+  components: { Menu, AppContent, Header },
   data() {
     return {
       title: "1Vue Admin Template",

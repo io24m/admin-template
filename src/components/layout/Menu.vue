@@ -8,6 +8,7 @@
     class="menus"
   >
     <a-menu mode="inline" :default-selected-keys="['10000']">
+      <!-- 展开折叠按钮 -->
       <a-menu-item @click="() => (collapsed = !collapsed)">
         <a-icon
           class="trigger"
@@ -36,7 +37,7 @@
         <span>Option 2</span>
       </a-menu-item>
       <a-sub-menu key="sub1">
-        <span slot="title"><a-icon type="user" /><span>User</span></span>
+        <span slot="title"><a-icon type="user" /><span>用户</span></span>
         <a-menu-item key="6"> Tom </a-menu-item>
         <a-menu-item key="7"> Bill </a-menu-item>
         <a-menu-item key="8"> Alex </a-menu-item>
@@ -68,7 +69,7 @@ export default {
     return {
       collapsed: false,
     };
-  },
+  }
 };
 </script>
 <style scoped>
