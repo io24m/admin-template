@@ -11,7 +11,11 @@ const createRouter = () => new Router({
     // }),
     routes: [{
         path: "/",
-        component: () => import("@/components/Index")
+        component: Layout, 
+        children: [{
+            path: "/",
+            component: () => import("@/components/Index")
+        }] 
     }, {
         path: "/hello",
         component: Layout, 
