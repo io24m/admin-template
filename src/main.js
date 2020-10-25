@@ -9,6 +9,7 @@ import '@/styles/index.scss' // global css
 
 import App from './App.vue'
 import router from  "./router"
+import './router/permission'
 
 Vue.config.productionTip = false
 
