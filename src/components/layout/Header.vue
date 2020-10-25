@@ -28,17 +28,14 @@
     <!-- <a-button type="link" :style="{ color: '#C1C6C8' }"> Link </a-button> -->
 
     <div style="display: inline-block; float: right; line-height: 43px">
-      <a-button type="link" :style="{ color: '#C1C6C8' }"> Link </a-button>
-      <a-button type="link" :style="{ color: '#C1C6C8' }"> Link1 </a-button>
+      <!-- <a-button type="link" :style="{ color: '#C1C6C8' }"> Link </a-button> -->
+      <!-- <a-button type="link" :style="{ color: '#C1C6C8' }"> Link1 </a-button> -->
       <!-- <a-button type="link" :style="{ color: '#C1C6C8' }">
         <a-avatar style="background-color: #87d068" icon="user" />
       </a-button> -->
 
       <a-dropdown>
-        <a-avatar
-          style="background-color: #87d068; cursor: pointer;  "
-           
-        >
+        <a-avatar style="background-color: #87d068; cursor: pointer">
           李
         </a-avatar>
 
@@ -68,18 +65,18 @@ export default {
       logo: "https://cn.vuejs.org/images/logo.png",
     };
   },
-    methods: {
+  methods: {
     showConfirm() {
       this.$confirm({
-        title: '退出系统',
-        cancelText:'取消',
-        okText:'退出系统',
-        okType:'danger',
-        content: '请确认是否退出系统？',
+        title: "退出系统",
+        cancelText: "取消",
+        okText: "退出系统",
+        okType: "danger",
+        content: "请确认是否退出系统？",
         onOk() {
-        //   return new Promise((resolve, reject) => {
-        //     setTimeout(Math.random() > 0.5 ? resolve : reject, 1000);
-        //   }).catch(() => console.log('Oops errors!'));
+          //   return new Promise((resolve, reject) => {
+          //     setTimeout(Math.random() > 0.5 ? resolve : reject, 1000);
+          //   }).catch(() => console.log('Oops errors!'));
         },
         onCancel() {},
       });

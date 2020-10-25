@@ -7,7 +7,7 @@
       overflow: 'auto',
     }"
     class="menus"
-    >main content
+    >
     <router-view />
   </a-layout-content>
 </template>

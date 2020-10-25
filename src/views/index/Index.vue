@@ -31,23 +31,23 @@ const columns = [
     scopedSlots: { customRender: "name" },
   },
   {
-    title: "Age",
+    title: "年纪",
     dataIndex: "age",
     key: "age",
   },
   {
-    title: "Address",
+    title: "地址",
     dataIndex: "address",
     key: "address",
   },
   {
-    title: "Tags",
+    title: "标签",
     key: "tags",
     dataIndex: "tags",
     scopedSlots: { customRender: "tags" },
   },
   {
-    title: "Action",
+    title: "操作",
     key: "action",
     scopedSlots: { customRender: "action" },
   },

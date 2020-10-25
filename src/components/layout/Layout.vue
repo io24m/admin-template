@@ -1,112 +1,43 @@
 <template>
-  <a-layout id="components-layout-demo-custom-trigger">
-    <a-layout-sider
-      v-model="collapsed"
-      :trigger="null"
-      collapsible
-      :style="{ overflow: 'auto', height: '100vh', left: 0 }"
-    >
-      <!-- <div class="logo" >LOGO</div> -->
-      <Logo />
-      <a-menu theme="dark" mode="inline" 
-      :default-selected-keys="['10000']"
-      >
-        <a-menu-item key="1">
-          <a-icon type="user" />
-          <span>nav 1</span>
-        </a-menu-item>
-        <a-menu-item key="2">
-          <a-icon type="video-camera" />
-          <span>nav 2</span>
-        </a-menu-item>
-        <a-menu-item key="3">
-          <a-icon type="upload" />
-          <span>nav 3</span>
-        </a-menu-item>
-        <a-menu-item key="4">
-          <a-icon type="pie-chart" />
-          <span>Option 1</span>
-        </a-menu-item>
-        <a-menu-item key="5">
-          <a-icon type="desktop" />
-          <span>Option 2</span>
-        </a-menu-item>
-        <a-sub-menu key="sub1">
-          <span slot="title"><a-icon type="user" /><span>User</span></span>
-          <a-menu-item key="6"> Tom </a-menu-item>
-          <a-menu-item key="7"> Bill </a-menu-item>
-          <a-menu-item key="8"> Alex </a-menu-item>
-        </a-sub-menu>
-        <a-sub-menu key="sub2">
-          <span slot="title"><a-icon type="team" /><span>Team</span></span>
-          <a-menu-item key="9"> Team 1 </a-menu-item>
-          <a-menu-item key="18"> Team 2 </a-menu-item>
-        </a-sub-menu>
-        <a-menu-item key="19">
-          <a-icon type="file" />
-          <span>File</span>
-        </a-menu-item>
-        <a-menu-item key="119">
-          <a-icon type="file" />
-          <span>File</span>
-        </a-menu-item>
-        <a-menu-item key="1119">
-          <a-icon type="file" />
-          <span>File</span>
-        </a-menu-item>
-      </a-menu>
-    </a-layout-sider>
+  <a-layout
+    :style="{
+      margin: '0px',
+      padding: '0px',
+      background: '#fff',
+      overflow: 'auto',
+      height: '100vh',
+    }"
+  >
+    <Header/>
     <a-layout>
-      <a-layout-header style="background: #fff; padding: 0">
-        <a-icon
-          class="trigger"
-          :type="collapsed ? 'menu-unfold' : 'menu-fold'"
-          @click="() => (collapsed = !collapsed)"
-        />
-      </a-layout-header>
-      <a-layout-content
-        :style="{
-          margin: '4px',
-          padding: '12px',
-          background: '#fff',
-          overflow: 'auto',
-          height: '1vh',
-        }"
-      >
-        <router-view />
-      </a-layout-content>
+      <Menu />
+      <AppContent />
     </a-layout>
+    <a-layout-footer
+      :style="{
+        padding: '0px 18px 4px 0px',
+        borderTop: '1px solid #fff',
+        textAlign: 'right',
+        fontSize: '12px',
+      }"
+      >版权所有:{{company}} 版本:{{version}}</a-layout-footer
+    >
   </a-layout>
 </template>
 <script>
-import Logo from "./Logo";
+import Menu from "./Menu";
+import AppContent from "./AppContent";
+import Header from "./Header";
 export default {
   name: "Layout",
-  components: { Logo },
+  components: { Menu, AppContent, Header },
   data() {
     return {
-      collapsed: false,
+      title: "1Vue Admin Template",
+      logo: "https://cn.vuejs.org/images/logo.png",
+      company:'Ant Design of Vue',
+      version:'0.1.0'
     };
   },
 };
 </script>
-<style>
-#components-layout-demo-custom-trigger .trigger {
-  font-size: 18px;
-  line-height: 64px;
-  padding: 0 24px;
-  cursor: pointer;
-  transition: color 0.3s;
-}
-
-#components-layout-demo-custom-trigger .trigger:hover {
-  /* color: #1890ff; */
-  color: #ff1852;
-}
-
-#components-layout-demo-custom-trigger .logo {
-  height: 32px;
-  background: rgba(255, 255, 255, 0.2);
-  margin: 16px;
-}
-</style>
