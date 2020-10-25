@@ -7,7 +7,7 @@
     :style="{ overflow: 'auto' }"
     class="menus"
   >
-    <a-menu mode="inline" :default-selected-keys="['10000']">
+    <a-menu mode="inline" :default-selected-keys="['10000']" style="border-right: 0px solid #e8e8e8;">
       <!-- 展开折叠按钮 -->
       <a-menu-item @click="() => (collapsed = !collapsed)">
         <a-icon
