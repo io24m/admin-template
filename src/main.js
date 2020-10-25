@@ -5,6 +5,8 @@ import 'ant-design-vue/dist/antd.css';
 // import ElementUI from 'element-ui';
 // import 'element-ui/lib/theme-chalk/index.css';
 
+import '@/styles/index.scss' // global css
+
 import App from './App.vue'
 import router from  "./router"
 
