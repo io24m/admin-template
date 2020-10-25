@@ -27,13 +27,35 @@
 
     <!-- <a-button type="link" :style="{ color: '#C1C6C8' }"> Link </a-button> -->
 
-    <div style="display: inline-block; float: right">
+    <div style="display: inline-block; float: right; line-height: 43px">
       <a-button type="link" :style="{ color: '#C1C6C8' }"> Link </a-button>
       <a-button type="link" :style="{ color: '#C1C6C8' }"> Link1 </a-button>
-      <a-button type="link" :style="{ color: '#C1C6C8' }">
-        <a-avatar style="backgroundColor:#87d068" icon="user" />
-      </a-button>
-      <!-- <a-avatar style="backgroundColor:#87d068" icon="user" shape="square" /> -->
+      <!-- <a-button type="link" :style="{ color: '#C1C6C8' }">
+        <a-avatar style="background-color: #87d068" icon="user" />
+      </a-button> -->
+
+      <a-dropdown>
+        <a-avatar
+          style="background-color: #87d068; cursor: pointer;  "
+           
+        >
+          李
+        </a-avatar>
+
+        <a-menu slot="overlay">
+          <a-menu-item @click="showConfirm">退出系统</a-menu-item>
+          <!-- <a-menu-item>2nd menu item</a-menu-item>
+          <a-sub-menu key="test" title="sub menu">
+            <a-menu-item>3rd menu item</a-menu-item>
+            <a-menu-item>4th menu item</a-menu-item>
+          </a-sub-menu>
+          <a-sub-menu title="disabled sub menu" disabled>
+            <a-menu-item>5d menu item</a-menu-item>
+            <a-menu-item>6th menu item</a-menu-item>
+          </a-sub-menu> -->
+        </a-menu>
+      </a-dropdown>
+      <!-- <a-avatar style="background-color:#87d068" icon="user" shape="square" /> -->
     </div>
   </a-layout-header>
 </template>
@@ -42,10 +64,26 @@ export default {
   name: "Header",
   data() {
     return {
-      title: "瑞明威审计系统",
+      title: "Ant Design of Vue",
       logo: "https://cn.vuejs.org/images/logo.png",
-      // "https://wpimg.wallstcn.com/69a1c46c-eb1c-4b46-8bd4-e9e686ef5251.png",
     };
+  },
+    methods: {
+    showConfirm() {
+      this.$confirm({
+        title: '退出系统',
+        cancelText:'取消',
+        okText:'退出系统',
+        okType:'danger',
+        content: '请确认是否退出系统？',
+        onOk() {
+        //   return new Promise((resolve, reject) => {
+        //     setTimeout(Math.random() > 0.5 ? resolve : reject, 1000);
+        //   }).catch(() => console.log('Oops errors!'));
+        },
+        onCancel() {},
+      });
+    },
   },
 };
 </script>
