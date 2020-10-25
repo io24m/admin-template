@@ -5,8 +5,8 @@
       backgroundColor: 'rgb(38, 47, 62)',
       color: '#C1C6C8',
       padding: '0 10px',
-      height:'48px',
-      lineHeight: '44px'
+      height: '48px',
+      lineHeight: '48px',
     }"
   >
     <router-link to="/">
@@ -30,6 +30,10 @@
     <div style="display: inline-block; float: right">
       <a-button type="link" :style="{ color: '#C1C6C8' }"> Link </a-button>
       <a-button type="link" :style="{ color: '#C1C6C8' }"> Link1 </a-button>
+      <a-button type="link" :style="{ color: '#C1C6C8' }">
+        <a-avatar style="backgroundColor:#87d068" icon="user" />
+      </a-button>
+      <!-- <a-avatar style="backgroundColor:#87d068" icon="user" shape="square" /> -->
     </div>
   </a-layout-header>
 </template>
