@@ -14,15 +14,15 @@ const createRouter = () => new Router({
         component: Layout, 
         children: [{
             path: "/",
-            component: () => import("@/components/Index")
+            component: () => import("@/views/index/Index")
         }] 
     }, {
-        path: "/hello",
+        path: "/home",
         component: Layout, 
-        redirect:"/hello/hello1",
+        redirect:"/home",
         children: [{
-            path: "hello1",
-            component: () => import("@/components/HelloWorld")
+            path: "/home",
+            component: () => import("@/views/home/Home")
         }]
     }]
 })
