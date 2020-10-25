@@ -6,8 +6,11 @@
       collapsible
       :style="{ overflow: 'auto', height: '100vh', left: 0 }"
     >
-      <div class="logo" />
-      <a-menu theme="dark" mode="inline" :default-selected-keys="['1']">
+      <!-- <div class="logo" >LOGO</div> -->
+      <Logo />
+      <a-menu theme="dark" mode="inline" 
+      :default-selected-keys="['10000']"
+      >
         <a-menu-item key="1">
           <a-icon type="user" />
           <span>nav 1</span>
@@ -63,11 +66,11 @@
       </a-layout-header>
       <a-layout-content
         :style="{
-          margin: '8px 0px 8px 8px',
+          margin: '4px',
           padding: '12px',
           background: '#fff',
           overflow: 'auto',
-          height: '10vh',
+          height: '1vh',
         }"
       >
         <router-view />
@@ -76,8 +79,10 @@
   </a-layout>
 </template>
 <script>
+import Logo from "./Logo";
 export default {
   name: "Layout",
+  components: { Logo },
   data() {
     return {
       collapsed: false,
@@ -95,7 +100,8 @@ export default {
 }
 
 #components-layout-demo-custom-trigger .trigger:hover {
-  color: #1890ff;
+  /* color: #1890ff; */
+  color: #ff1852;
 }
 
 #components-layout-demo-custom-trigger .logo {
