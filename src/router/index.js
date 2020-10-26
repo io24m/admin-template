@@ -10,21 +10,29 @@ const createRouter = () => new Router({
     //     y: 0
     // }),
     routes: [{
+        name: "首页1",
         path: "/",
-        component: Layout, 
+        component: Layout,
         children: [{
+            name: "首页1",
             path: "/",
             component: () => import("@/views/index/Index")
-        }] 
+        }]
     }, {
+        name: "首页2",
         path: "/home",
-        component: Layout, 
-        redirect:"/home",
+        component: Layout,
+        redirect: "/home",
         children: [{
+            name:"h1",
+            path: "/",
+            component: () => import("@/views/home/Home")
+        },{
+            name:"h2",
             path: "/home",
             component: () => import("@/views/home/Home")
         }]
-    }]
+    } ]
 })
 
 const router = createRouter()
