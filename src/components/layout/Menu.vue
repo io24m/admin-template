@@ -5,9 +5,9 @@
     :trigger="null"
     collapsible
     :style="{ overflow: 'auto' }"
-    class="menus"
+    class="l-scroll"
   >
-    <a-menu mode="inline" :default-selected-keys="['10000']" style="border-right: 0px solid #e8e8e8;">
+    <a-menu mode="inline" :default-selected-keys="['10000']" style="border-right: 1px solid #fff;">
       <!-- 展开折叠按钮 -->
       <a-menu-item @click="() => (collapsed = !collapsed)">
         <a-icon
@@ -73,21 +73,5 @@ export default {
 };
 </script>
 <style scoped>
-.menus::-webkit-scrollbar {
-  /*滚动条整体样式*/
-  width: 2px; /*高宽分别对应横竖滚动条的尺寸*/
-  height: 1px;
-}
-.menus::-webkit-scrollbar-thumb {
-  /*滚动条里面小方块*/
-  border-radius: 10px;
-  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
-  background: #ededed;
-}
-.menus::-webkit-scrollbar-track {
-  /*滚动条里面轨道*/
-  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
-  border-radius: 10px;
-  background: #fff;
-}
+
 </style>
