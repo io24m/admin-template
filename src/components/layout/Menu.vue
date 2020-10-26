@@ -4,10 +4,14 @@
     v-model="collapsed"
     :trigger="null"
     collapsible
-    :style="{ overflow: 'auto' }"
+    :style="{ overflowX: 'hidden', overflowY: 'auto', overflowY: 'overlay' }"
     class="l-scroll"
   >
-    <a-menu mode="inline" :default-selected-keys="['10000']" style="border-right: 1px solid #fff;">
+    <a-menu
+      mode="inline"
+      :default-selected-keys="['10000']"
+      style="border-right: 1px solid #fff"
+    >
       <!-- 展开折叠按钮 -->
       <a-menu-item @click="() => (collapsed = !collapsed)">
         <a-icon
@@ -69,9 +73,8 @@ export default {
     return {
       collapsed: false,
     };
-  }
+  },
 };
 </script>
 <style scoped>
-
 </style>
