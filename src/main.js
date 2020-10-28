@@ -1,10 +1,11 @@
 import Vue from 'vue'
 import Antd from 'ant-design-vue';
-import 'ant-design-vue/dist/antd.css';
-
+//import 'ant-design-vue/dist/antd.css';
+//import 'ant-design-vue/dist/antd.less';
 // import ElementUI from 'element-ui';
 // import 'element-ui/lib/theme-chalk/index.css';
 
+import '@/styles/l-ant-design-vue.less' // ant-design-vue
 import '@/styles/index.scss' // global css
 
 import App from './App.vue'
