@@ -1,10 +1,11 @@
 <template>
   <a-layout-sider
+    breakpoint="xs"
     theme="light"
     v-model="collapsed"
     :trigger="null"
     collapsible
-    :style="{ overflowX: 'hidden', overflowY: 'auto', overflowY: 'overlay' }"
+    :style="{ overflowX: 'hidden', overflowY: 'auto overlay' }"
     class="l-scroll"
   >
     <a-menu
