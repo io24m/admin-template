@@ -34,7 +34,7 @@
       <template v-for="route in routes">
         <a-menu-item v-if="!hasChild(route.children)" :key="route.path">
           <router-link :to="route.path">
-            <a-icon type="home" />
+            <a-icon :type="route.icon" />
             <span>{{ route.name }}</span>
           </router-link>
         </a-menu-item>
@@ -68,12 +68,12 @@ const SubMenu = {
   template: `
       <a-sub-menu :key="menuInfo.path" v-bind="$props" v-on="$listeners">
         <span slot="title">
-          <a-icon type="mail" /><span>{{ menuInfo.name }}</span>
+          <a-icon :type="menuInfo.icon" /><span>{{ menuInfo.name }}</span>
         </span>
         <template v-for="item in menuInfo.children">
           <a-menu-item v-if="!item.children" :key="item.path">
             <router-link :to="item.path">
-              <a-icon type="pie-chart" />
+              <a-icon :type="item.icon" />
               <span>{{ item.name }}</span>
             </router-link>
           </a-menu-item>
