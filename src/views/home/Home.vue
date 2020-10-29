@@ -35,18 +35,15 @@ export default {
           name: "邮件",
           path: "/mail",
           component: Layout,
-          // redirect: "/mail",
+          redirect: "/mail/index",
           children: [
             {
-              icon: "mail",
-              name: "h1",
-              path: "/mail",
+              path: "/mail/index",
               component: () => import("@/views/index/Index"),
             },
           ],
         },
       ];
-      this.$router.options.routes=[]
       this.$router.addRoutes(t);
     },
   },

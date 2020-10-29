@@ -15,7 +15,7 @@ router.beforeEach(async (to, from, next) => {
     }
     i = i + 1
     const r = [{
-        icon: "home",
+        icon: "mail",
         name: "邮件",
         path: "/mail",
         component: () => import("@/components/layout/Layout"),

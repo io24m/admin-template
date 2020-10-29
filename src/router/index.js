@@ -13,10 +13,10 @@ const createRouter = () => new Router({
         icon: "home",
         name: "首页",
         path: "/",
+        redirect: "/home/index",
         component: Layout,
-        children: [{
-            name: "首页",
-            path: "/",
+        children: [{ 
+            path: "/home/index",
             component: () => import("@/views/home/Home")
         }]
     // }, {
