@@ -46,6 +46,7 @@
 </template>
 <script>
 import { Menu } from "ant-design-vue";
+import { mapGetters } from "vuex";
 // import AppLink from "./Link"
 
 const hasChild = function (children) {
@@ -106,9 +107,12 @@ export default {
     };
   },
   computed: {
-    routes() {
-      return this.$router.options.routes;
-    },
+    ...mapGetters({
+      routes: "permission/getRouters",
+    }),
+    // routes() {
+    //   return this.$router.options.routes;
+    // },
   },
   methods: {
     hasChild,

@@ -9,8 +9,11 @@ import '@/styles/l-ant-design-vue.less' // ant-design-vue
 import '@/styles/index.scss' // global css
 
 import App from './App.vue'
-import router from  "./router"
+import store from './store/index'
+import router from "./router"
 import './router/permission'
+
+
 
 Vue.config.productionTip = false
 
@@ -19,6 +22,7 @@ Vue.config.productionTip = false
 Vue.use(Antd);
 
 new Vue({
+  store,
   router,
   render: h => h(App),
 }).$mount('#app')
