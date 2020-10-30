@@ -22,7 +22,9 @@
           >
             <a-icon slot="prefix" type="lock" />
           </a-input-password>
-          <a-button block size="large" @click="login"> login in </a-button>
+          <a-button block size="large" :loading="loading" @click="login">
+            login in
+          </a-button>
         </a-col>
       </a-input-group>
     </a-row>
@@ -34,13 +36,18 @@ export default {
     return {
       userName: "",
       password: "",
+      loading: false,
     };
   },
-  methods:{
-      login(){
-        this.$router.push('/')
-      }
-  }
+  methods: {
+    login() {
+      this.loading = true;
+      setTimeout(() => {
+        this.loading = false;
+        this.$router.push("/");
+      }, 2000);
+    },
+  },
 };
 </script>
 <style scoped>
