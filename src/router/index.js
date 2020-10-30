@@ -10,6 +10,9 @@ const createRouter = () => new Router({
     //     y: 0
     // }),
     routes: [{
+        path: "/login",
+        component: () => import("@/components/login/Login")
+    },{
         icon: "home",
         name: "首页",
         path: "/",
