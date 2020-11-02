@@ -1,4 +1,4 @@
-import logo from '@/assets/logo.png'
+const logo = require("@/assets/logo.png")
 
 const settings = {
     axios: {
@@ -12,4 +12,5 @@ const settings = {
         logo: logo
     },
 }
-export default settings
+// export default settings
+module.exports = settings
