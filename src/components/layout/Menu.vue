@@ -1,6 +1,6 @@
 <template>
   <a-layout-sider
-    breakpoint="xs"
+    breakpoint="md"
     theme="light"
     v-model="collapsed"
     :trigger="null"
