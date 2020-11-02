@@ -8,7 +8,7 @@
       height: '100vh',
     }"
   >
-    <Header/>
+    <Header />
     <a-layout>
       <Menu />
       <AppContent />
@@ -20,7 +20,7 @@
         textAlign: 'right',
         fontSize: '12px',
       }"
-      >版权所有:{{company}} 版本:{{version}}</a-layout-footer
+      >版权所有:{{ company }} 版本:{{ version }}</a-layout-footer
     >
   </a-layout>
 </template>
@@ -28,15 +28,14 @@
 import Menu from "./Menu";
 import AppContent from "./AppContent";
 import Header from "./Header";
+import settings from "@/settings.js";
 export default {
   name: "Layout",
   components: { Menu, AppContent, Header },
   data() {
     return {
-      title: "1Vue Admin Template",
-      logo: "https://cn.vuejs.org/images/logo.png",
-      company:'Ant Design of Vue',
-      version:'0.1.0'
+      company: settings.app.company,
+      version: settings.app.version,
     };
   },
 };

@@ -22,6 +22,7 @@
 
 <script>
 import Layout from "@/components/layout/Layout";
+import request from "@/utils/request.js";
 export default {
   name: "Home",
   props: {
@@ -29,6 +30,15 @@ export default {
   },
   methods: {
     cl() {
+      request({
+        url: "/",
+        method: "post",
+        data: {},
+      }).then((response) => {
+        const { data } = response;
+        console.log(data);
+      });
+
       const t = [
         {
           icon: "home",

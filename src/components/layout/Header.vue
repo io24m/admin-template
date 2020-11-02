@@ -57,12 +57,13 @@
   </a-layout-header>
 </template>
 <script>
+import settings from "@/settings.js";
 export default {
   name: "Header",
   data() {
     return {
-      title: "Ant Design of Vue",
-      logo: "https://cn.vuejs.org/images/logo.png",
+      title: settings.app.title,
+      logo: settings.app.logo //+ "https://cn.vuejs.org/images/logo.png",
     };
   },
   methods: {
