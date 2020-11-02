@@ -58,12 +58,13 @@
 </template>
 <script>
 import settings from "@/settings.js";
+import logo from '@/assets/logo.png'
 export default {
   name: "Header",
   data() {
     return {
       title: settings.app.title,
-      logo: settings.app.logo //+ "https://cn.vuejs.org/images/logo.png",
+      logo: logo
     };
   },
   methods: {

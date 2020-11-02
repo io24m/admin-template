@@ -1,6 +1,7 @@
 const settings = require('./src/settings.js')
 
 const webName = settings.app.title
+
 module.exports = {
   runtimeCompiler: true,
   css: {

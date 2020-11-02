@@ -1,5 +1,3 @@
-const logo = require("@/assets/logo.png")
-
 const settings = {
     axios: {
         baseURL: "/",
@@ -9,8 +7,9 @@ const settings = {
         title: 'Ant Design',
         company: 'Ant Design',
         version: '0.0.1 beta',
-        logo: logo
     },
 }
+
 // export default settings
+
 module.exports = settings
