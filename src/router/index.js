@@ -1,6 +1,7 @@
 import Vue from "vue"
 import Router from "vue-router"
 import Layout from "@/components/layout/Layout"
+// import Layout2 from "@/components/layout2/Layout"
 
 Vue.use(Router)
 
@@ -22,18 +23,18 @@ const createRouter = () => new Router({
             path: "/home/index",
             component: () => import("@/views/home/Home")
         }]
-    // }, {
-    //     icon: "home",
-    //     name: "邮件",
-    //     path: "/mail",
-    //     component: Layout,
-    //     // redirect: "/mail",
-    //     children: [{
-    //         icon: "mail",
-    //         name: "h1",
-    //         path: "/mail",
-    //         component: () => import("@/views/index/Index")
-    //     }]
+    }, {
+        icon: "home",
+        name: "邮件",
+        path: "/mail",
+        component: Layout,
+        // redirect: "/mail",
+        children: [{
+            icon: "mail",
+            name: "h1",
+            path: "/mail",
+            component: () => import("@/views/index/Index")
+        }]
     }]
 })
 
