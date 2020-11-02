@@ -11,7 +11,7 @@ import '@/styles/index.scss' // global css
 import App from './App.vue'
 import store from './store/index'
 import router from "./router"
-import './router/permission'
+import './router/router.config.js'
 
 
 
