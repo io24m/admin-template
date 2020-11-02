@@ -6,6 +6,9 @@ const state = {
 const getters = {
     getUser(state) {
         return state.user
+    },
+    getUserNameFirst() {
+        return state.user.name && state.user.name.length > 0 && state.user.name[0]
     }
 }
 const mutations = {
