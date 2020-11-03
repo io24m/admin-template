@@ -15,33 +15,31 @@
           class="bg-white div-margin"
         >
           <a slot="extra">全部项目</a>
-          <a-card-grid style="width: 25%; text-align: center">
-            Content
+
+          <a-card-grid v-for="(item, index) in projects" :key="index" :style="{ padding: 0 }">
+            <a-card  :bordered="false" :style="{ padding: 0 }">
+              <img
+                slot="cover"
+                alt="example"
+                src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
+              />
+              <template slot="actions">
+                <a-icon key="setting" type="setting" />
+                <a-icon key="edit" type="edit" />
+                <a-icon key="ellipsis" type="ellipsis" />
+              </template>
+              <a-card-meta
+                :title="item.title"
+                description="This is the description"
+              >
+                <a-avatar
+                  slot="avatar"
+                  src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
+                />
+              </a-card-meta>
+            </a-card>
           </a-card-grid>
-          <a-card-grid
-            style="width: 25%; text-align: center"
-            :hoverable="false"
-          >
-            Content
-          </a-card-grid>
-          <a-card-grid style="width: 25%; text-align: center">
-            Content
-          </a-card-grid>
-          <a-card-grid style="width: 25%; text-align: center">
-            Content
-          </a-card-grid>
-          <a-card-grid style="width: 25%; text-align: center">
-            Content
-          </a-card-grid>
-          <a-card-grid style="width: 25%; text-align: center">
-            Content
-          </a-card-grid>
-          <a-card-grid style="width: 25%; text-align: center">
-            Content
-          </a-card-grid>
-          <a-card-grid style="width: 25%; text-align: center">
-            Content
-          </a-card-grid>
+          
         </a-card>
         <!-- <div style="margin: 10px">&nbsp;</div> -->
         <a-card title="动态" :bordered="false" class="bg-white div-margin">
@@ -132,6 +130,24 @@ export default {
           avatar: "",
           name: "测试团队",
         },
+      ],
+      projects: [
+        // {
+        //   title: "1",
+        //   description: "2",
+        // },{
+        //   title: "1",
+        //   description: "2",
+        // },{
+        //   title: "1",
+        //   description: "2",
+        // },{
+        //   title: "1",
+        //   description: "2",
+        // },{
+        //   title: "1",
+        //   description: "2",
+        // },
       ],
     };
   },
