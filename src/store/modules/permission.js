@@ -11,15 +11,15 @@ const getters = {
     }
 }
 const mutations = {
-    addRouter(state,r) {
+    SET_ROUTERS(state, r) {
         state.routers = state.routers.concat(r)
     }
 }
 const actions = {
     addRouter({
         commit
-    },r) {
-        commit("addRouter",r)
+    }, r) {
+        commit("SET_ROUTERS", r)
     }
 }
 

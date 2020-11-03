@@ -15,7 +15,7 @@
       <template v-for="route in routes">
         <a-menu-item v-if="!hasChild(route.children)" :key="route.path">
           <router-link :to="route.path">
-            <a-icon :type="route.icon" />
+            <a-icon :type="route.meta && route.meta.icon" />
             <span>{{ route.name }}</span>
           </router-link>
         </a-menu-item>
@@ -49,12 +49,12 @@ const SubMenu = {
   template: `
       <a-sub-menu :key="menuInfo.path" v-bind="$props" v-on="$listeners">
         <span slot="title">
-          <a-icon :type="menuInfo.icon" /><span>{{ menuInfo.name }}</span>
+          <a-icon :type="menuInfo.meta && menuInfo.meta.icon" /><span>{{ menuInfo.name }}</span>
         </span>
         <template v-for="item in menuInfo.children">
           <a-menu-item v-if="!item.children" :key="item.path">
             <router-link :to="item.path">
-              <a-icon :type="item.icon" />
+              <a-icon :type="item.meta && item.meta.icon" />
               <span>{{ item.name }}</span>
             </router-link>
           </a-menu-item>
