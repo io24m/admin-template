@@ -1,9 +1,9 @@
 <template>
   <a-layout-content
     :style="{
-      margin: '4px',
-      padding: '12px',
-      background: '#fff',
+      margin: '1px',
+      padding: '1px',
+      background: '#f0f2f5',
       overflow: 'auto',
     }"
     class="l-scroll"
