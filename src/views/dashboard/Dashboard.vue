@@ -1,11 +1,12 @@
 <template>
-    <div>dsss</div>
+  <div>
+    <a-row>
+      <a-col :span="24"> col-24 </a-col>
+    </a-row>
+  </div>
 </template>
 <script>
-export default {
-    
-}
+export default {};
 </script>
 <style scoped>
-
 </style>
