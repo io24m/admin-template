@@ -21,7 +21,6 @@
 </template>
 
 <script>
-import Layout from "@/components/layout/Layout";
 import request from "@/utils/request.js";
 export default {
   name: "Home",
@@ -38,23 +37,6 @@ export default {
         const { data } = response;
         console.log(data);
       });
-
-      const t = [
-        {
-          icon: "home",
-          name: "邮件",
-          path: "/mail",
-          component: Layout,
-          redirect: "/mail/index",
-          children: [
-            {
-              path: "/mail/index",
-              component: () => import("@/views/index/Index"),
-            },
-          ],
-        },
-      ];
-      this.$router.addRoutes(t);
     },
   },
 };
