@@ -11,6 +11,9 @@ const createRouter = () => new Router({
     //     y: 0
     // }),
     routes: constantRouter.concat([{
+        path: "/login",
+        component: () => import("@/components/login/Login")
+    }, {
         path: "/*",
         redirect: "/404",
         component: Layout,
