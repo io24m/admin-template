@@ -1,17 +1,9 @@
-import Layout from "@/components/layout/Layout"
+// import Layout from "@/components/layout/Layout"
+
+import constantRouter from '@/router/constantRouter.js'
 
 const state = {
-    routers: [{
-        icon: "home",
-        name: "首页",
-        path: "/",
-        component: Layout,
-        children: [{
-            name: "首页",
-            path: "/",
-            component: () => import("@/views/home/Home")
-        }]
-    }]
+    routers: constantRouter
 }
 const getters = {
     getRouters(state) {
