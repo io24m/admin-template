@@ -16,30 +16,28 @@
         >
           <a slot="extra">全部项目</a>
 
-          <a-card-grid v-for="(item, index) in projects" :key="index" :style="{ padding: 0 }">
-            <a-card  :bordered="false" :style="{ padding: 0 }">
-              <img
-                slot="cover"
-                alt="example"
-                src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
-              />
-              <template slot="actions">
-                <a-icon key="setting" type="setting" />
-                <a-icon key="edit" type="edit" />
-                <a-icon key="ellipsis" type="ellipsis" />
-              </template>
-              <a-card-meta
-                :title="item.title"
-                description="This is the description"
-              >
-                <a-avatar
-                  slot="avatar"
-                  src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
-                />
-              </a-card-meta>
-            </a-card>
+          <a-card-grid
+            v-for="(item, index) in projects"
+            :key="index"
+            style="width: 33.33%; text-align: left"
+          >
+            <div>
+              <a-avatar size="small" :src="item.src" />
+              <a style="margin-left: 10px">Alipay</a>
+            </div>
+            <div style="margin-top: 10px; color: rgba(0, 0, 0, 0.45)">
+              那是一种内在的东西， 他们到达不了，也无法触及的
+            </div>
+            <div
+              style="
+                font-size: 12px;
+                margin-top: 10px;
+                color: rgba(0, 0, 0, 0.45);
+              "
+            >
+              <a>科学搬砖组</a>
+            </div>
           </a-card-grid>
-          
         </a-card>
         <!-- <div style="margin: 10px">&nbsp;</div> -->
         <a-card title="动态" :bordered="false" class="bg-white div-margin">
@@ -93,9 +91,12 @@
 </template>
 <script>
 import img from "@/assets/dashboard/01.png";
+import img_ali from "@/assets/dashboard/ali.png";
+import img_angular from "@/assets/dashboard/Angular.png";
 export default {
   data() {
     return {
+      img_ali: img_ali,
       activities: [
         {
           user: {
@@ -132,22 +133,16 @@ export default {
         },
       ],
       projects: [
-        // {
-        //   title: "1",
-        //   description: "2",
-        // },{
-        //   title: "1",
-        //   description: "2",
-        // },{
-        //   title: "1",
-        //   description: "2",
-        // },{
-        //   title: "1",
-        //   description: "2",
-        // },{
-        //   title: "1",
-        //   description: "2",
-        // },
+        {
+          title: "1",
+          description: "2",
+          src: img_ali,
+        },
+        {
+          title: "1",
+          description: "2",
+          src: img_angular,
+        }
       ],
     };
   },
@@ -156,6 +151,8 @@ export default {
     this.$data.activities = this.$data.activities.concat(this.$data.activities);
     this.$data.activities = this.$data.activities.concat(this.$data.activities);
     this.$data.teams.forEach((v) => (v.avatar = img));
+    this.$data.projects = this.$data.projects.concat(this.$data.projects);
+    this.$data.projects = this.$data.projects.concat(this.$data.projects);
   },
 };
 </script>
