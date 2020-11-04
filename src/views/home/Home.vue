@@ -21,7 +21,6 @@
 </template>
 
 <script>
-import request from "@/utils/request.js";
 export default {
   name: "Home",
   props: {
@@ -29,12 +28,11 @@ export default {
   },
   methods: {
     cl() {
-      request({
-        url: "/",
+      this.$http({
+        url: "/album/newest",
         method: "post",
         data: {},
-      }).then((response) => {
-        const { data } = response;
+      }).then((data) => {
         console.log(data);
       });
     },
