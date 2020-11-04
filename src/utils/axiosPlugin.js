@@ -9,7 +9,7 @@ const axiosPlugin = {
         this.installed = true
 
         if (!instance) {
-            console.error('You have to install axios')
+            console.error('not axios instance')
             return
         }
 
@@ -29,4 +29,5 @@ const axiosPlugin = {
         })
     }
 }
+
 Vue.use(axiosPlugin, request)
