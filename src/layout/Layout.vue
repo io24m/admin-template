@@ -32,9 +32,15 @@
       >
         {{ title }}
       </h1>
-      <a-button type="link" :style="{ color: '#C1C6C8' }"> Link </a-button>
+      <!-- <a-button type="link" :style="{ color: '#C1C6C8' }"> Link </a-button> -->
       <div style="display: inline-block; float: right; line-height: 43px">
-        <a-button type="link" :style="{ color: '#C1C6C8' }"> Link </a-button>
+        <!-- <a-button type="link" :style="{ color: '#C1C6C8' }"> Link </a-button> -->
+        <a
+          target="_blank"
+          href="https://www.antdv.com/components/button-cn/"
+          :style="{ color: '#C1C6C8', paddingRight: '20px' }"
+          >Ant Design 文档</a
+        >
         <a-dropdown>
           <a-avatar style="background-color: #87d068; cursor: pointer">
             {{ userName }}

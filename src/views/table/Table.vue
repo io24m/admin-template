@@ -5,25 +5,39 @@
       :columns="columns"
       :data-source="data"
       size="small"
-      :scroll="{ x: false, y: '50%', scrollToFirstRowOnChange: true }"
+      :scroll="{ x: false, y: 300, scrollToFirstRowOnChange: true }"
       :pagination="{ pageSize: 50 }"
-      
     >
       <template slot="operation" slot-scope="text, record">
         <div class="editable-row-operations">
           <span v-if="record.editable">
-            <a @click="() => save(record.key)">保存</a>
-            <a-popconfirm
-              title="Sure to cancel?"
-              @confirm="() => cancel(record.key)"
-            >
-              <a>取消</a>
-            </a-popconfirm>
+            <a-tag color="#108ee9">
+              <a @click="() => save(record.key)">保存</a>
+            </a-tag>
+            <a-tag color="#f50">
+              <a-popconfirm
+                title="确定删除?"
+                @confirm="() => cancel(record.key)"
+              >
+                <a>删除</a>
+              </a-popconfirm>
+            </a-tag>
           </span>
           <span v-else>
-            <a :disabled="editingKey !== ''" @click="() => edit(record.key)"
-              >编辑</a
-            >
+            <a-tag color="#108ee9">
+              <a @click="() => edit(record.key)">编辑</a>
+            </a-tag>
+            <a-dropdown>
+              <a-menu slot="overlay" @click="handleMenuClick">
+                <a-menu-item key="1"> 操作一 </a-menu-item>
+                <a-menu-item key="2"> 操作二 </a-menu-item>
+                <a-menu-item key="3"> 操作三 </a-menu-item>
+              </a-menu>
+              <!-- <a-button> 操作 <a-icon type="down" /> </a-button> -->
+              <a-tag color="#108ee9">
+                <a>操作<a-icon type="down" /></a>
+              </a-tag>
+            </a-dropdown>
           </span>
         </div>
       </template>
@@ -40,8 +54,8 @@ export default {
   },
   mounted() {
     this.$data.columns = [
-      { dataIndex: "name", title: "姓名" },
-      { dataIndex: "age", title: "年齡" },
+      { dataIndex: "name", title: "姓名", sorter: true },
+      { dataIndex: "age", title: "年齡", sorter: true },
       { dataIndex: "sex", title: "性別" },
       { dataIndex: "opr", title: "操作" },
       {
@@ -63,6 +77,11 @@ export default {
       });
       //   this.$data.data.push(d())
     }
+  },
+  methods: {
+    handleMenuClick(e) {
+      console.log("click", e);
+    },
   },
 };
 </script>
