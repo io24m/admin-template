@@ -35,11 +35,11 @@
       <!-- <a-button type="link" :style="{ color: '#C1C6C8' }"> Link </a-button> -->
       <div style="display: inline-block; float: right; line-height: 43px">
         <!-- <a-button type="link" :style="{ color: '#C1C6C8' }"> Link </a-button> -->
-        <a
+        <a v-for="item in ex_link" :key="item.name"
           target="_blank"
-          href="https://www.antdv.com/components/button-cn/"
+          :href="item.url"
           :style="{ color: '#C1C6C8', paddingRight: '20px' }"
-          >Ant Design 文档</a
+          >{{item.name}}</a
         >
         <a-dropdown>
           <a-avatar style="background-color: #87d068; cursor: pointer">
@@ -86,6 +86,14 @@ export default {
       company: settings.app.company,
       version: settings.app.version,
       collapsed: false,
+      //
+      ex_link:[{
+        url:'https://pro.antdv.com/',
+        name:"pro.antdv.com"
+      },{
+        url:'https://www.antdv.com/components/button-cn/',
+        name:"Ant Design 文档"
+      }]
     };
   },
   computed: {
