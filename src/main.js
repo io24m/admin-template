@@ -13,6 +13,7 @@ import store from './store/index'
 import router from "./router"
 import './router/router.config.js'
 import './utils/axiosPlugin.js'
+import Container from '@/components/container/Container'
 
 
 Vue.config.productionTip = false
@@ -20,6 +21,10 @@ Vue.config.productionTip = false
 // Vue.use(ElementUI);
 
 Vue.use(Antd);
+
+//注册组件
+Vue.component('l-container', Container)
+
 
 new Vue({
   store,
