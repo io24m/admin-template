@@ -11,7 +11,7 @@
     />
     <br />
     <br />
-    <aplayer autoplay :music="aplayer" v-if="mus" ref="aplayer" />
+    <aplayer autoplay :music="aplayer" v-if="mus" ref="aplayer" :list="musicList" />
     <br />
     <a-list item-layout="vertical" size="large" :data-source="datas">
       <!-- <div slot="footer"><b>ant design vue</b> footer part</div> -->
@@ -45,6 +45,7 @@
       </a-list-item>
     </a-list>
     <a-pagination
+      v-if="mus"
       v-model="current"
       size="small"
       :total="pagination.total"
@@ -63,7 +64,7 @@ export default {
       keywords: "",
       datas: [],
       pagination: {
-        pageSize: 5,
+        pageSize: 15,
         total: 0,
       },
       actions: [
@@ -108,6 +109,7 @@ export default {
       if (!data) {
         me.$data.pagination.total = 0;
         me.$data.datas = [];
+        this.musicList=[]
         return;
       }
       const songs = data.result.songs;
@@ -149,6 +151,7 @@ export default {
       if (!me.keywords) {
         me.$data.pagination.total = 0;
         me.$data.datas = [];
+        this.musicList=[]
         return;
       }
       pageIndex = pageIndex || 1;
