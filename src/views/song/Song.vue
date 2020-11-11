@@ -1,8 +1,20 @@
 <template>
   <div class="bg-color c">
-    <!-- <div style="position: fixed; top:100px; left: 10px ;bottom:10px">
-      <a-button type="primary"> Affix top </a-button>
-    </div> -->
+    <a-input-search
+      v-model="keywords"
+      placeholder="输入要搜索的歌曲"
+      size="large"
+      @search="onSearch"
+    >
+      <a-select slot="addonBefore" default-value="1" style="width: 90px">
+        <a-select-option value="1"> 单曲 </a-select-option>
+        <a-select-option value="10"> 专辑 </a-select-option>
+      </a-select>
+    </a-input-search>
+
+    <br />
+    <br />
+
     <a-input-search
       v-model="keywords"
       placeholder="输入要搜索的歌曲"
@@ -11,7 +23,13 @@
     />
     <br />
     <br />
-    <aplayer autoplay :music="aplayer" v-if="mus" ref="aplayer" :list="musicList" />
+    <aplayer
+      autoplay
+      :music="aplayer"
+      v-if="mus"
+      ref="aplayer"
+      :list="musicList"
+    />
     <br />
     <a-list item-layout="vertical" size="large" :data-source="datas">
       <!-- <div slot="footer"><b>ant design vue</b> footer part</div> -->
@@ -109,7 +127,7 @@ export default {
       if (!data) {
         me.$data.pagination.total = 0;
         me.$data.datas = [];
-        this.musicList=[]
+        this.musicList = [];
         return;
       }
       const songs = data.result.songs;
@@ -151,7 +169,7 @@ export default {
       if (!me.keywords) {
         me.$data.pagination.total = 0;
         me.$data.datas = [];
-        this.musicList=[]
+        this.musicList = [];
         return;
       }
       pageIndex = pageIndex || 1;

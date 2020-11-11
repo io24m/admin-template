@@ -32,8 +32,8 @@
         }"
         class="l-scroll"
       >
-        <a-row type="flex" justify="center">
-          <a-col :md="12" :xs='24'> <router-view /></a-col>
+        <a-row type="flex" justify="space-around" align="middle">
+          <a-col :md="12" :xs="24"> <router-view /></a-col>
         </a-row>
       </a-layout-content>
     </a-layout>
