@@ -6,7 +6,7 @@
       size="large"
       @search="onSearch"
     >
-      <a-select slot="addonBefore" default-value="1" style="width: 90px">
+      <a-select slot="addonBefore" style="width: 90px" v-model="searchType">
         <a-select-option value="1"> 单曲 </a-select-option>
         <a-select-option value="10"> 专辑 </a-select-option>
       </a-select>
@@ -80,6 +80,7 @@ export default {
   data() {
     return {
       keywords: "",
+      searchType: "1",
       datas: [],
       pagination: {
         pageSize: 15,
@@ -175,7 +176,7 @@ export default {
       pageIndex = pageIndex || 1;
       return this.$http.get("/search", {
         params: {
-          type: 1,
+          type: me.searchType,
           keywords: me.keywords,
           limit: me.pagination.pageSize,
           offset: pageIndex - 1,
