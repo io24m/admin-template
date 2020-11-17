@@ -1,35 +1,35 @@
 // import Layout from "@/components/layout/Layout"
 import Layout from "@/layout/Layout"
-import SongLayout from "@/layout/songLayout/SongLayout"
+// import SongLayout from "@/layout/songLayout/SongLayout"
 
 
 const constantRouter = [];
-constantRouter.push({
-    name: "控制台",
-    path: "/",
-    redirect: "/song",
-    component: SongLayout,
-    meta: {
-        icon: "home"
-    },
-    children: [{
-        path: "/song",
-        component: () => import("@/views/song/Song")
-    }]
-});
 // constantRouter.push({
 //     name: "控制台",
 //     path: "/",
-//     redirect: "/dashboard",
-//     component: Layout,
+//     redirect: "/song",
+//     component: SongLayout,
 //     meta: {
 //         icon: "home"
 //     },
 //     children: [{
-//         path: "/dashboard",
-//         component: () => import("@/views/dashboard/Dashboard")
+//         path: "/song",
+//         component: () => import("@/views/song/Song")
 //     }]
-// })
+// });
+constantRouter.push({
+    name: "控制台",
+    path: "/",
+    redirect: "/dashboard",
+    component: Layout,
+    meta: {
+        icon: "home"
+    },
+    children: [{
+        path: "/dashboard",
+        component: () => import("@/views/dashboard/Dashboard")
+    }]
+})
 constantRouter.push(...[{
     name: "首页",
     path: "/home",
